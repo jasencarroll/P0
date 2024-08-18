@@ -20,3 +20,41 @@ Print a message:
 September 2016.".
 """
 
+phone_numbers = []
+
+# Get all of the numbers from the call log.
+for call in calls:
+    phone_numbers.append(call[0])
+    phone_numbers.append(call[1])
+
+# Initialize a new list
+nums = []
+
+# Using list comprehension:
+# - Append the phone number (x)
+# - For every phone number in the original list
+# - If it hasn't already been appended
+for number in phone_numbers:
+    if number not in nums:
+        nums.append(number)
+
+count = len(nums)
+print(count, nums[0])
+num_durations = []
+
+for call in calls:
+    for num in nums:
+        if call[0] == num:
+            num_durations.append([num, call[3]])
+        elif call[1] == num:
+            num_durations.append([num, call[3]])
+
+matches = []
+for duration in num_durations:
+    for num in nums:
+        if duration[0] == num:
+            matches = matches + 1
+
+print(matches)
+print(len(num_durations))
+#for num in nums:

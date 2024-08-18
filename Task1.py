@@ -28,8 +28,8 @@ for text in texts:
 
 # Get all of the numbers from the call log.
 for call in calls:
-    phone_numbers.append(text[0])
-    phone_numbers.append(text[1])
+    phone_numbers.append(call[0])
+    phone_numbers.append(call[1])
 
 # Initialize a new list
 nums = []
@@ -38,7 +38,9 @@ nums = []
 # - Append the phone number (x)
 # - For every phone number in the original list
 # - If it hasn't already been appended
-nums = [nums.append(x) for x in phone_numbers if x not in nums]
+for number in phone_numbers:
+    if number not in nums:
+        nums.append(number)
 
 count = len(nums)
 print(f"There are {count} different telephone numbers in the records.")
