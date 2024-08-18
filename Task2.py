@@ -49,12 +49,14 @@ for call in calls:
         elif call[1] == num:
             num_durations.append([num, call[3]])
 
-matches = []
-for duration in num_durations:
-    for num in nums:
-        if duration[0] == num:
-            matches = matches + 1
+nums_dict = dict.fromkeys(nums)
+for nums in nums_dict:
+    nums_dict[nums] = 0
 
-print(matches)
-print(len(num_durations))
-#for num in nums:
+for calls in num_durations:
+    for key in nums_dict:
+        if calls[0] == key:
+            nums_dict[key] = nums_dict[key] + int(calls[1])
+
+print(nums_dict)
+
