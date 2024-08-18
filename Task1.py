@@ -18,3 +18,27 @@ How many different telephone numbers are there in the records?
 Print a message:
 "There are <count> different telephone numbers in the records."
 """
+
+phone_numbers = []
+
+# Get all of the numbers from the text log.
+for text in texts:
+    phone_numbers.append(text[0])
+    phone_numbers.append(text[1])
+
+# Get all of the numbers from the call log.
+for call in calls:
+    phone_numbers.append(text[0])
+    phone_numbers.append(text[1])
+
+# Initialize a new list
+nums = []
+
+# Using list comprehension:
+# - Append the phone number (x)
+# - For every phone number in the original list
+# - If it hasn't already been appended
+nums = [nums.append(x) for x in phone_numbers if x not in nums]
+
+count = len(nums)
+print(f"There are {count} different telephone numbers in the records.")
