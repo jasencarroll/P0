@@ -25,3 +25,10 @@ Print a message:
 The list of numbers should be print out one per line in lexicographic order with no duplicates.
 """
 
+
+## Make Outgoing 
+
+## Never send text or receive text
+# use what you did in task 1
+
+## Never receive call

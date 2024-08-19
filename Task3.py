@@ -44,3 +44,52 @@ Print the answer as a part of a message::
 to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
+
+# Part A - all area codes/prefixes called by people in Bangalore.
+
+## Calls from (080)
+
+bangalore_callers = []
+for call in calls:
+    if call[0].startswith('(080)'):
+        bangalore_callers.append(call)
+
+
+## Fixed Lines
+
+bang_out = []
+for call in bangalore_callers:
+    if '(' in call[1]:
+        bang_out.append(call[1])
+
+## Mobiles
+
+# have a space in the middle and always starts with 7, 8, or 9.
+mobiles = []
+
+for call in bangalore_callers:
+    if ' ' in call[1]:
+      if call[1].startswith('7') or call[1].startswith('8') or call[1].startswith('9'):
+        bang_out.append(call[1])
+
+
+## Telemarketers - 140
+telemarketers = []
+
+for call in bangalore_callers:
+    if call[1].startswith('140'):
+        bang_out.append(call[1])
+
+print(bang_out)
+
+# Print the answer as part of a message:
+#print(f"The numbers called by people in Bangalore have codes: {list_of_codes}")
+
+# Part B - what % are fixed to fixed?
+
+## (080) to (080)
+
+
+
+# Print the answer as a part of a message::
+#print(f"{percentage} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.")
