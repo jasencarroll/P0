@@ -57,6 +57,7 @@ for call in calls:
 
 ## Fixed Lines
 
+#refactor with .startswith
 bang_out = []
 for call in bangalore_callers:
     if '(' in call[1]:
@@ -69,8 +70,8 @@ mobiles = []
 
 for call in bangalore_callers:
     if ' ' in call[1]:
-      if call[1].startswith('7') or call[1].startswith('8') or call[1].startswith('9'):
-        bang_out.append(call[1])
+        if call[1].startswith('7') or call[1].startswith('8') or call[1].startswith('9'):
+          bang_out.append(call[1])
 
 
 ## Telemarketers - 140
@@ -80,12 +81,20 @@ for call in bangalore_callers:
     if call[1].startswith('140'):
         bang_out.append(call[1])
 
-print(bang_out)
+#print(bang_out)
 # Now I need a list of all of the area codes.
 
-# if it starts with a parenthesis, find the other one and strip everything after
-
+# if it starts with a parenthesis, find the other one and strip everything after.
+area_code_list = []
+for call in bang_out:
+    if '(' in call:
+        area_code_end = call.find(')')
+        area_code = call[1:area_code_end]
+        if area_code not in area_code_list:
+            area_code_list.append(area_code)
+            print(area_code_list)
 # if it starts with a 140 strip everything else
+
 
 # if it starts with a 7, 8, or 9, strip everything starting at the space. 
 
