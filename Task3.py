@@ -81,6 +81,15 @@ for call in bangalore_callers:
         bang_out.append(call[1])
 
 print(bang_out)
+# Now I need a list of all of the area codes.
+
+# if it starts with a parenthesis, find the other one and strip everything after
+
+# if it starts with a 140 strip everything else
+
+# if it starts with a 7, 8, or 9, strip everything starting at the space. 
+
+## Using find()
 
 # Print the answer as part of a message:
 #print(f"The numbers called by people in Bangalore have codes: {list_of_codes}")
