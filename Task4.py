@@ -27,8 +27,38 @@ The list of numbers should be print out one per line in lexicographic order with
 
 
 ## Make Outgoing 
+incoming = []
+outgoing = []
+
+for call in calls:
+    incoming.append(call[0])
+    outgoing.append(call[1])
+
+all_calls = incoming + outgoing
+
+
+all_texts = []
+for text in texts:
+    all_texts.append(text[0])
+    all_texts.append(text[1])
+
+telemarketers = []
+
+for call in all_calls:
+    if call not in incoming:
+        if call in outgoing:
+            if call not in all_texts:
+                telemarketers.append(call)
 
 ## Never send text or receive text
 # use what you did in task 1
 
 ## Never receive call
+
+#incoming
+
+# Print Line
+telemarketers.sort()
+print(f"These numbers could be telemarketers: ")
+for num in telemarketers:
+    print(num)
