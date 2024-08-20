@@ -92,21 +92,40 @@ for call in bang_out:
         area_code = call[1:area_code_end]
         if area_code not in area_code_list:
             area_code_list.append(area_code)
-            print(area_code_list)
-# if it starts with a 140 strip everything else
 
+# if it starts with a 140 strip everything else
+area_code_list.append('140')
 
 # if it starts with a 7, 8, or 9, strip everything starting at the space. 
+for call in bang_out:
+    if ' ' in call:
+        if call.startswith('7') or call.startswith('8') or call.startswith('9'):
+              area_code_end = 4
+              area_code = call[0:area_code_end]    
+              if area_code not in area_code_list:
+                  area_code_list.append(area_code)
 
-## Using find()
+# Sort the list as requested
+area_code_list.sort()
 
 # Print the answer as part of a message:
-#print(f"The numbers called by people in Bangalore have codes: {list_of_codes}")
+#print(f"The numbers called by people in Bangalore have codes: ")
+#for area_code in area_code_list:
+#    print(area_code)
 
 # Part B - what % are fixed to fixed?
 
 ## (080) to (080)
+area_code_dict = dict.fromkeys(area_code_list)
+for area_codes in area_code_dict:
+    area_code_dict[area_codes] = 0
 
+for call in bang_out:
+    for key in area_code_dict:
+        if str(key) in call:
+            area_code_dict[key] = area_code_dict[key] + int(1)
+
+print(area_code_dict)
 
 
 # Print the answer as a part of a message::
