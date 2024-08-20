@@ -127,6 +127,13 @@ for call in bang_out:
 
 print(area_code_dict)
 
+total_calls = 0
+for call in bang_out:
+    total_calls = total_calls + 1
+
+percent080 = float((area_code_dict['080'] / total_calls)*100).__round__(2)
+
+    
 
 # Print the answer as a part of a message::
-#print(f"{percentage} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.")
+print(f"{percent080} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.")
