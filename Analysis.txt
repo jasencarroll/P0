@@ -5,19 +5,17 @@ Directly accessing the values using index so the time remains constant.
 Runtime Efficiency = O(1)
 
 ## Task1
-We have one for loop at a time and the list will grow proportionally.
-If statements would remain linear. 
-Runtime Efficiency = O(n)
+Containment inside of a for loop. 
+Runtime Efficiency = O(n^2)
 
 ## Task2
-There is a for loop nested inside of a for loop and the list will grow exponentially.
-Runtime Efficiency = O(n^2)
+Containment inside of a for loop, inside of a for loop.
+Runtime Efficiency = O(n^3)
 
 ## Task3
-There is a for loop nested inside of a for loop and the list will grow exponentially.
-Runtime Efficiency = O(n^2)
+Containment inside of a for loop, inside of a for loop.
+Runtime Efficiency = O(n^3)
 
 ## Task4
-There is a single for loop at a time and the list will grow proportionally.
-If statements would remain linear. 
-Runtime Efficiency = 0(n)
+5 levels of containment
+Runtime Efficiency = 0(n^5)
