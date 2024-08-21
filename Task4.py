@@ -47,7 +47,8 @@ for call in all_calls:
     if call not in incoming:
         if call in outgoing:
             if call not in all_texts:
-                telemarketers.append(call)
+                if call not in telemarketers:
+                    telemarketers.append(call)
 
 ## Never send text or receive text
 # use what you did in task 1
