@@ -56,9 +56,4 @@ for calls in num_durations:
         if calls[0] == key:
             nums_dict[key] = nums_dict[key] + int(calls[1])
 
-# Get the number [0] associated with the greaters value in [1]
-
-print(len(nums_dict))
-print(max(nums_dict.values()))
-
 print(list(nums_dict.keys())[list(nums_dict.values()).index(max(nums_dict.values()))], "spent the longest time", max(nums_dict.values()), "seconds, on the phone during September 2016.")

@@ -108,10 +108,10 @@ for call in bang_out:
 # Sort the list as requested
 area_code_list.sort()
 
-# Print the answer as part of a message:
-#print(f"The numbers called by people in Bangalore have codes: ")
-#for area_code in area_code_list:
-#    print(area_code)
+#Print the answer as part of a message:
+print(f"The numbers called by people in Bangalore have codes: ")
+for area_code in area_code_list:
+    print(area_code)
 
 # Part B - what % are fixed to fixed?
 
@@ -125,8 +125,6 @@ for call in bang_out:
         if str(key) in call:
             area_code_dict[key] = area_code_dict[key] + int(1)
 
-print(area_code_dict)
-
 total_calls = 0
 for call in bang_out:
     total_calls = total_calls + 1
@@ -136,4 +134,4 @@ percent080 = float((area_code_dict['080'] / total_calls)*100).__round__(2)
     
 
 # Print the answer as a part of a message::
-print(f"{percent080} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.")
+print(f"\n{percent080} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.")

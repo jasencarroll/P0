@@ -31,11 +31,10 @@ incoming = []
 outgoing = []
 
 for call in calls:
-    incoming.append(call[0])
-    outgoing.append(call[1])
+    outgoing.append(call[0])
+    incoming.append(call[1])
 
 all_calls = incoming + outgoing
-
 
 all_texts = []
 for text in texts:
